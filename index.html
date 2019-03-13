@@ -15,9 +15,27 @@
     <div class="chart">
         <div class="chart__header">
             <div class="chart__header__title">SLA Compliance</div>
-            <div class="chart__header__controls"></div>
+            <div class="chart__header__controls">
+                <img src="./assets/icons/full-size.svg" alt="" />
+                <img src="./assets/icons/garbage.svg" alt="" />
+                <img src="./assets/icons/dash.svg" alt="" />
+                <img src="./assets/icons/close.svg" alt="" />
+            </div>
         </div>
         <div class="chart__desc">A little explanation about the chart (very optional)</div>
+        <div class="chart__keys">
+            <div class="chart__keys__item">
+                <div class="chart__keys__item--green"></div>
+                <div class="chart__keys__item__label">Closed within SLA</div>
+            </div>
+            <div class="chart__keys__item">
+                <div class="chart__keys__item--red"></div>
+                <div class="chart__keys__item__label">Closed outside SLA</div>
+            </div>
+        </div>
+        <div id="entries" class="chart__body">
+            <script language="JavaScript">dataset();</script>
+        </div>
     </div>
 </body>
 
