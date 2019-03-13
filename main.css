@@ -53,8 +53,6 @@ ul {
     -webkit-box-shadow: 5px 8px 5px var(--input-focus-bg);
     -moz-box-shadow: 5px 8px 5px var(--input-focus-bg);
     box-shadow: 5px 8px 5px var(--input-focus-bg);
-    animation: drop 1s ease-out;
-    backface-visibility: hidden;
 }
 .chart__header{
     display: flex;
@@ -65,11 +63,13 @@ ul {
     font-weight: bold;
     margin-bottom: .5rem;
     color: #000;
+    animation: moveInRight 1s ease-out;
 }
 .chart__desc{
     font-size: 1.4rem;
     margin-bottom: 1rem;
     color: var(--text-color-lite);
+    animation: moveInRight 1s ease-out;
 }
 .chart__header__controls{
     display: flex;
@@ -83,6 +83,7 @@ ul {
 .chart__keys{
     margin: 1.5rem 0;
     display: flex;
+    animation: moveInLeft 1s ease-out;
 }
 .chart__keys__item{
     display: flex;
@@ -119,6 +120,7 @@ ul {
     color: #000;
     font-size: 1.4rem;
     padding: 1rem 1.2rem;
+    animation: moveInUp 1s ease-out;
 }
 .chart__entry__val{
     display: flex;
@@ -196,22 +198,45 @@ ul {
         transform-origin: bottom center;
     }
 }
-@keyframes drop {
+@keyframes moveInUp {
     0% {
-        opacity: 0;
-        transform: scale(0.99);
-        transform-origin: bottom center;
+      opacity: 0;
+      transform: translateY(-2px);
     }
-    50%{
-        transform: scale(1.01);
-        transform-origin: bottom center;
+    80% {
+      transform: translateY(2px);
     }
     100% {
-        opacity: 1;
-        transform: scale(1);
-        transform-origin: bottom center;
+      opacity: 1;
+      transform: translateY(0);
     }
 }
+@keyframes moveInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    80% {
+      transform: translateX(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+}
+@keyframes moveInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    80% {
+      transform: translateX(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 @media only screen and (max-width: 1200px) {
     .chart__body{
         overflow-y: auto;
