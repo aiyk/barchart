@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,900");
+
+:root {
+  --primary-color: #008FF4;
+  --bg: #ecf5ec;
+  --text-color: #6B6B6B;
+  --text-color-lite: #AAAAAA;
+  --input-text-color: #A6A6A6;
+  --input-focus-bg: rgba(0, 0, 0, 0.1);
+  --input-focus-color: #444444;
+  --label-color: #BBBBBB;
+  --red: #E00404;
+  --green: #69CC69;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400; 
+  line-height: 1.7;
+  color: #000;
+  box-sizing: border-box;
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+.chart{
+    width: 80%;
+    margin: 0 auto;
+    background: #fff;
+    min-height: 50rem;
+    padding: 2rem;
+    border-radius: .7rem;
+    -webkit-box-shadow: 5px 8px 5px var(--input-focus-bg);
+    -moz-box-shadow: 5px 8px 5px var(--input-focus-bg);
+    box-shadow: 5px 8px 5px var(--input-focus-bg);
+}
+.chart__header{
+    display: flex;
+    justify-content: space-between;
+    color: #000;
+}
+.chart__header__title{
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
