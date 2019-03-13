@@ -1,51 +1,63 @@
 let slaCompliance = {
     JAN: {
         withinSLA: 12,
-        outsideSLA: 28
+        outsideSLA: 28,
+        date: 'Jan 2018'
     },
     FEB: {
-        withinSLA: 80,
-        outsideSLA: 20
+        withinSLA: 50,
+        outsideSLA: 20,
+        date: 'Feb 2018'
     },
     MAR: {
         withinSLA: 92,
-        outsideSLA: 8
+        outsideSLA: 8,
+        date: 'Mar 2018'
     },
     APR: {
         withinSLA: 80,
-        outsideSLA: 20
+        outsideSLA: 10,
+        date: 'Apr 2018'
     },
     MAY: {
         withinSLA: 35,
-        outsideSLA: 65
+        outsideSLA: 65,
+        date: 'May 2018'
     },
     JUN: {
         withinSLA: 75,
-        outsideSLA: 25
+        outsideSLA: 15,
+        date: 'Jun 2018'
     },
     JUL: {
-        withinSLA: 60,
-        outsideSLA: 40
+        withinSLA: 20,
+        outsideSLA: 40,
+        date: 'Jul 2018'
     },
     AUG: {
         withinSLA: 4,
-        outsideSLA: 96
+        outsideSLA: 16,
+        date: 'Aug 2018'
     },
     SEP: {
         withinSLA: 25,
-        outsideSLA: 75
+        outsideSLA: 75,
+        date: 'Sep 2018'
     },
     OCT: {
         withinSLA: 40,
-        outsideSLA: 60
+        outsideSLA: 30,
+        date: 'Oct 2018'
     },
     NOV: {
-        withinSLA: 65,
-        outsideSLA: 35
+        withinSLA: 35,
+        outsideSLA: 35,
+        date: 'Nov 2018'
     },
     DEC: {
         withinSLA: 21,
-        outsideSLA: 49
+        outsideSLA: 49,
+        date: 'Dec 2018'
     },
 }
 
@@ -61,6 +73,19 @@ const dataset = () => {
                     </div>
                     <div class="chart__entry__litr">` + slaCompliance[entry].withinSLA + `%</div>
                     <div class="chart__entry__litr">` + entry + `</div>
+
+                    <div class="chart__entry__detail">
+                        <div>` + slaCompliance[entry].date + `</div>
+                        <div class="chart__keys__item">
+                            <div class="chart__keys__item--green"></div>
+                            <div class="chart__keys__item__label">` + slaCompliance[entry].withinSLA + `%</div>
+                        </div>
+                        <div class="chart__keys__item">
+                            <div class="chart__keys__item--red"></div>
+                            <div class="chart__keys__item__label">`+ slaCompliance[entry].outsideSLA + `%</div>
+                        </div>
+                        <img src="./assets/icons/drop-down-arrow.svg" alt="" />
+                    </div>
                 </div>
             `);
         }

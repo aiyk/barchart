@@ -53,6 +53,7 @@ ul {
     -webkit-box-shadow: 5px 8px 5px var(--input-focus-bg);
     -moz-box-shadow: 5px 8px 5px var(--input-focus-bg);
     box-shadow: 5px 8px 5px var(--input-focus-bg);
+    animation: drop 1s ease-out;
 }
 .chart__header{
     display: flex;
@@ -108,6 +109,9 @@ ul {
     display: flex;
     width: 100%;
 }
+.chart__entry{
+    position: relative;
+}
 .chart__entry__litr{
     width: 100%;
     font-weight: bold;
@@ -131,8 +135,80 @@ ul {
 .chart__entry__val--red{
     width: 100%;
     background: var(--red);
+    transition: max-height 0.25s ease-in;
+    animation: grow 1s ease-out;
 }
 .chart__entry__val--green{
     width: 100%;
     background: var(--green);
+    animation: grow .5s ease-out;
+}
+.chart__entry__detail{
+    background: #000;
+    border-radius: .7rem;
+    padding: 1rem;
+    position: absolute;
+    top: -82px;
+    color: #fff;
+    display: none;
+    min-width: 10rem;
+    z-index: 1;
+    left: -17%;
+    flex-direction: column;
+    justify-content: center;
+    -webkit-box-shadow: 5px 8px 5px var(--input-focus-bg);
+    -moz-box-shadow: 5px 8px 5px var(--input-focus-bg);
+    box-shadow: 5px 8px 5px var(--input-focus-bg);
+    animation: grow2 .5s ease-out;
+}
+.chart__entry:hover .chart__entry__detail{
+    display: flex;
+}
+.chart__entry__detail img{
+    width: 2rem;
+    position: absolute;
+    top: 71px;
+    left: 43%;
+    z-index: 7;
+}
+
+@keyframes grow {
+    0% {
+        opacity: 0;
+        transform: scaleY(0);
+        transform-origin: bottom center;
+    }
+    100% {
+        opacity: 1;
+        transform: scaleY(1);
+        transform-origin: bottom center;
+    }
+}
+@keyframes grow2 {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+        transform-origin: bottom center;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        transform-origin: bottom center;
+    }
+}
+@keyframes drop {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+        transform-origin: bottom center;
+    }
+    50%{
+        transform: scale(1.03);
+        transform-origin: bottom center;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        transform-origin: bottom center;
+    }
 }
