@@ -212,8 +212,11 @@ ul {
         transform-origin: bottom center;
     }
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1000px) {
     .chart__body{
         overflow-y: auto;
+    }
+    .chart__entry__detail{
+        top: 82px;
     }
 }
