@@ -54,6 +54,7 @@ ul {
     -moz-box-shadow: 5px 8px 5px var(--input-focus-bg);
     box-shadow: 5px 8px 5px var(--input-focus-bg);
     animation: drop 1s ease-out;
+    backface-visibility: hidden;
 }
 .chart__header{
     display: flex;
@@ -141,7 +142,6 @@ ul {
 .chart__entry__val--green{
     width: 100%;
     background: var(--green);
-    animation: grow .5s ease-out;
 }
 .chart__entry__detail{
     background: #000;
@@ -199,11 +199,11 @@ ul {
 @keyframes drop {
     0% {
         opacity: 0;
-        transform: scale(0.9);
+        transform: scale(0.99);
         transform-origin: bottom center;
     }
     50%{
-        transform: scale(1.03);
+        transform: scale(1.01);
         transform-origin: bottom center;
     }
     100% {
@@ -212,7 +212,7 @@ ul {
         transform-origin: bottom center;
     }
 }
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1200px) {
     .chart__body{
         overflow-y: auto;
     }
